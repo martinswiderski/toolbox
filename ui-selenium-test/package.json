@@ -4,7 +4,9 @@
   "description": "Boilerplate package for Selenium test rig",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rebuild": "rm -fr node_modules; npm install",
+    "selenium": "alias gulp=./node_modules/.bin/gulp; gulp selenium",
+    "test": "echo \"Error: no top-level test bootstrap specified, try running 'npm run selenium'\" && exit 1"
   },
   "keywords": [
     "seleniu",
@@ -13,5 +15,16 @@
     "mocha"
   ],
   "author": "SNIEE",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "eslint-plugin-react": "^6.10.3",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^4.1.0",
+    "mocha": "^3.2.0",
+    "selenium-webdriver": "^3.3.0"
+  }
 }
