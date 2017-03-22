@@ -1,5 +1,27 @@
 #!/bin/bash
 clear
+
+killsymlink () {
+    cd $1
+    if [ -L ".$2" ]
+    then
+        sudo unlink npm
+    fi
+    CD $3
+}
+
+installifmissing () {
+    COMMAND=`command -v $1`
+    if [[ -z "${COMMAND// }" ]]
+    then
+        echo " Prereq: Installing [$1]..."
+        sudo apt-get install $1
+    else
+        echo " OK. Found [$1]..."
+    fi
+}
+
+
 echo "++++++++++++++++++++++++++++++"
 echo "+ nvm installer              +"
 echo "++++++++++++++++++++++++++++++"
@@ -24,12 +46,14 @@ fi
 FOUND=`echo $SYSTEM | cut -d ':' -f 3`
 echo "------------------------------"
 echo " Found:$FOUND"
-GIT=`command -v git`
-if [[ -z "${GIT// }" ]]
-then
-    echo " Prereq: Installing [git]..."
-    sudo apt-get install git
-fi
+echo "----"
+echo "Purging previous installs if exist..."
+echo ""
+killsymlink "/usr/bin" "node" "$SCRIPTPATH"
+killsymlink "/usr/bin" "nodejs" "$SCRIPTPATH"
+killsymlink "/usr/bin" "npm" "$SCRIPTPATH"
+killsymlink "/usr/bin" "nvm" "$SCRIPTPATH"
+installifmissing "git"
 echo "------------------------------"
 echo " Installing [nvm]..."
 sudo rm -fr +/.nvm
