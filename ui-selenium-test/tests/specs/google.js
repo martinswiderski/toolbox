@@ -37,6 +37,12 @@ let driver = new webdriver.Builder()
     }))
     .build();
 
+var path = require('path'),
+    fs = require('fs'),
+    md5 = require('md5');
+
+console.log( 'MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename) );
+
 /**
  * Landing page.  Ensure title is correct.
  */
