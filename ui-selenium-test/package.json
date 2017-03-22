@@ -1,0 +1,17 @@
+{
+  "name": "ui-selenium-test",
+  "version": "0.0.1",
+  "description": "Boilerplate package for Selenium test rig",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "seleniu",
+    "gulp",
+    "vanilla",
+    "mocha"
+  ],
+  "author": "SNIEE",
+  "license": "ISC"
+}
