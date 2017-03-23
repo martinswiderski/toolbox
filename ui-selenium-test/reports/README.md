@@ -161,3 +161,12 @@ wlan0     Link encap:Ethernet  HWaddr 08:3e:8e:41:20:bd
           inet addr:192.168.1.90  Bcast:192.168.1.255  Mask:255.255.255.0
 ```
 
+##### [Tests run (by **mswiderski**) on Thu Mar 23 18:11:25 GMT 2017](20170323-1811-25.md)
+Test machine footprint:
+```
+eth1      Link encap:Ethernet  HWaddr 10:60:4b:dd:93:4d  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+wlan0     Link encap:Ethernet  HWaddr 08:3e:8e:41:20:bd  
+          inet addr:192.168.1.90  Bcast:192.168.1.255  Mask:255.255.255.0
+```
+
