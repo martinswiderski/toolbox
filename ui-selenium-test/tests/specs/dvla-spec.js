@@ -34,6 +34,8 @@ var webdriver = browser.webdriver,
     until     = browser.until,
     driver    = browser.driver;
 
+config.signTestFile(__filename);
+
 /**
  * Landing page.  Ensure title is correct.
  */

@@ -29,10 +29,12 @@ var expect = require('chai').expect,
         !process.env['https_proxy'] ? '' : process.env['https_proxy']
     );
 
-let webdriver = browser.webdriver;
-let By        = browser.by;
-let until     = browser.until; 
-let driver    = browser.driver;
+var webdriver = browser.webdriver,
+    By        = browser.by,
+    until     = browser.until,
+    driver    = browser.driver;
+
+config.signTestFile(__filename);
 
 /**
  * Landing page.  Ensure title is correct.

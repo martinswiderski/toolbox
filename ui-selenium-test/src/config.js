@@ -38,7 +38,7 @@ module.exports = {
             driver: driver
         };
     },
-    signFile: function (file) {
+    signTestFile: function (file) {
         console.log( 'MD5: ' + md5(fs.readFileSync(file)) + ' File: ' + path.basename(file) );
     }
 };
