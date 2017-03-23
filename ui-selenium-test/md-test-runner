@@ -5,7 +5,8 @@ RUN=`date`
 NET=`ifconfig | grep 'inet \|HWaddr'`
 gulp seleniumOutput > "./reports/$FILENAME.md"
 echo "##### [Tests run (by **$TESTER**) on $RUN]($FILENAME.md)" >> reports/README.md
-echo "````" >> reports/README.md
+echo "Test machine footprint:" >> reports/README.md
+echo "\`\`\`" >> reports/README.md
 echo "$NET" >> reports/README.md
-echo "````" >> reports/README.md
+echo "\`\`\`" >> reports/README.md
 echo "" >> reports/README.md
