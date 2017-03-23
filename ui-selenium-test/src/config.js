@@ -6,25 +6,35 @@ var i = 0, _instances = {},
     md5 = require('md5');
 
 module.exports = {
-    browser: function () {
+    browser: function (_browser, _proxyHttp, _proxyHttps) {
         ++i;
         var webdriver = require('selenium-webdriver'),
             By = webdriver.By,
             until = webdriver.until,
             proxy = require('selenium-webdriver/proxy'),
-            driver = new webdriver.Builder()
-            .withCapabilities({ 'browserName': 'firefox' })
-            .setProxy(proxy.manual({
-                http: 'proxy.scee.net:3128',
-                https: 'proxy.scee.net:3128'
-            })).build();
+            driver = null;
+
+            if (typeof _proxyHttp === 'string' && typeof _proxyHttps === 'string' 
+                && _proxyHttp.length > 8 && _proxyHttps.length > 8) {
+                
+                driver = new webdriver.Builder()
+                    .withCapabilities({ 'browserName': _browser })
+                    .setProxy(proxy.manual({
+                        http: _proxyHttp,
+                        https: _proxyHttps
+                    })).build();                
+            } else {
+                driver = new webdriver.Builder()
+                    .withCapabilities({ 'browserName': _browser })
+                    .build();
+            }
 
         return {
+            timeout: 30000,
             webdriver: webdriver,
             By: By,
             until: until,
             proxy: proxy,
-            webdriver: webdriver,
             driver: driver
         };
     },

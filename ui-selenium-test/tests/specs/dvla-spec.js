@@ -23,7 +23,11 @@ require('chai').should();
 
 var expect = require('chai').expect,
     config = require('./../../src/config'),
-    browser = config.browser();
+    browser = config.browser(
+        'firefox', 
+        !process.env['http_proxy'] ? '' : process.env['http_proxy'], 
+        !process.env['https_proxy'] ? '' : process.env['https_proxy']
+    );
 
 var webdriver = browser.webdriver,
     By        = browser.by,
@@ -36,7 +40,7 @@ var webdriver = browser.webdriver,
 describe('DVLA UK Test', function () {
 
     /* 10 Seconds works well locally */
-    this.timeout(10000);
+    this.timeout(browser.timeout);
 
     /**
      * Before hook to start webdriver
