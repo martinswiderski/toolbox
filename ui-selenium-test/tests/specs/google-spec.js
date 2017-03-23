@@ -50,7 +50,7 @@ describe('Google Test', function () {
     /**
      * Page title correct?
      */
-    it('Ensure page title is correct', function (done) {
+    it('Ensure page Google title is correct', function (done) {
         driver.getTitle()
             .then(() => driver.getTitle())
             .then(title => title.should.equal('Google'))

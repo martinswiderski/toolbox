@@ -50,7 +50,7 @@ describe('DVLA UK Test', function () {
     /**
      * Page title correct?
      */
-    it('Ensure page title is correct', function (done) {
+    it('Ensure DVLA page title is correct', function (done) {
         driver.getTitle()
             .then(() => driver.getTitle())
             .then(title => title.should.equal('Driver and Vehicle Licensing Agency - GOV.UK'))
