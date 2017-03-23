@@ -10,3 +10,7 @@ echo "\`\`\`" >> reports/README.md
 echo "$NET" >> reports/README.md
 echo "\`\`\`" >> reports/README.md
 echo "" >> reports/README.md
+git add reports/README.md reports/*.md
+git commit -m "Test run $RUN by $TESTER"
+git push origin master
+
