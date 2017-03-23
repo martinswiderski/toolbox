@@ -4,12 +4,13 @@
   "description": "Boilerplate package for Selenium test rig",
   "main": "index.js",
   "scripts": {
+    "helloworld": "echo \"I say howdy!\"",
     "rebuild": "rm -fr node_modules; npm install",
-    "selenium": "alias gulp=./node_modules/.bin/gulp; gulp selenium",
+    "selenium": "alias gulp=./node_modules/.bin/gulp; gulp selenium; ./md-test-runner.sh",
     "test": "echo \"Error: no top-level test bootstrap specified, try running 'npm run selenium'\" && exit 1"
   },
   "keywords": [
-    "seleniu",
+    "selenium",
     "gulp",
     "vanilla",
     "mocha"

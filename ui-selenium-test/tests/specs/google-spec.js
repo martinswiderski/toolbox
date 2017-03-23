@@ -18,30 +18,13 @@
  *    -g Pattern matches the 'describe'
  *
  */
-
-
 'use strict';
 require('chai').should();
-var expect = require('chai').expect;
 
-let webdriver = require('selenium-webdriver');
-let By = webdriver.By;
-let until = webdriver.until;
+var expect = require('chai').expect,
+    testConfig = require('./../../src/config');
 
-var proxy = require('selenium-webdriver/proxy');
-let driver = new webdriver.Builder()
-    .withCapabilities({ 'browserName': 'firefox' })
-    .setProxy(proxy.manual({
-        http: 'proxy.scee.net:3128',
-        https: 'proxy.scee.net:3128'
-    }))
-    .build();
-
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5');
-
-console.log( 'MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename) );
+testConfig.signFile(__filename);
 
 /**
  * Landing page.  Ensure title is correct.
@@ -56,7 +39,7 @@ describe('Google Test', function () {
      */
     before(function (done) {
        
-        driver.navigate().to('http://google.com/')
+        testConfig.driver.navigate().to('http://google.com/')
             .then(() => done())
     });
 
@@ -64,8 +47,8 @@ describe('Google Test', function () {
      * Page title correct?
      */
     it('Ensure page title is correct', function (done) {
-        driver.getTitle()
-            .then(() => driver.getTitle())
+        testConfig.driver.getTitle()
+            .then(() => testConfig.driver.getTitle())
             .then(title => title.should.equal('Google'))
             .then(() => done());
     });
@@ -75,7 +58,7 @@ describe('Google Test', function () {
      * After hook to quit webdriver
      */
     after(function (done) {
-        driver.quit()
+        testConfig.driver.quit()
             .then(() => done());
 
     });

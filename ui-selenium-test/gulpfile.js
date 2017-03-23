@@ -17,7 +17,7 @@ gulp.task('eslint', function () {
 
 gulp.task('selenium', function () {
 
-  return gulp.src(['tests/specs/*.js'], { read: false })
+  return gulp.src(['tests/specs/*-spec.js'], { read: false })
     .pipe(mocha({
       reporter: 'spec'
     }))
@@ -28,6 +28,18 @@ gulp.task('selenium', function () {
 
 });
 
+gulp.task('seleniumOutput', function () {
+
+  return gulp.src(['tests/specs/*-spec.js'], { read: false })
+    .pipe(mocha({
+      reporter: 'markdown'
+    }))
+    .on('error', function() { 
+      console.log( 'failed test' ); 
+      process.exit.bind(process, 1) 
+    });
+
+});
 
 gulp.task('default', ['eslint', 'selenium'], function () {
     // This will only run if the eslint task is successful...
