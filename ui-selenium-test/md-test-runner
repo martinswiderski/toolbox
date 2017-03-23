@@ -1,5 +1,6 @@
 #!/bin/bash
 FILENAME=`date +'%Y%m%d-%H%M-%S'`;
+TESTER=`whoami`;
 RUN=`date`
 gulp seleniumOutput > "./reports/$FILENAME.md"
-echo " * [Tests run $RUN]($FILENAME.md)" >> reports/README.md
+echo " * [Tests run (by ) on $RUN]($FILENAME.md)" >> reports/README.md
