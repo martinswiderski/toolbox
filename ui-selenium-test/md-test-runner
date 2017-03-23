@@ -2,5 +2,10 @@
 FILENAME=`date +'%Y%m%d-%H%M-%S'`;
 TESTER=`whoami`;
 RUN=`date`
+NET=`ifconfig | grep 'inet \|HWaddr'`
 gulp seleniumOutput > "./reports/$FILENAME.md"
-echo " * [Tests run (by ) on $RUN]($FILENAME.md)" >> reports/README.md
+echo "##### [Tests run (by **$TESTER**) on $RUN]($FILENAME.md)" >> reports/README.md
+echo "````" >> reports/README.md
+echo "$NET" >> reports/README.md
+echo "````" >> reports/README.md
+echo "" >> reports/README.md
