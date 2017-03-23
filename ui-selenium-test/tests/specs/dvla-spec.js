@@ -25,15 +25,15 @@ var expect = require('chai').expect,
     config = require('./../../src/config'),
     browser = config.browser();
 
-let webdriver = browser.webdriver;
-let By        = browser.by;
-let until     = browser.until; 
-let driver    = browser.driver;
+var webdriver = browser.webdriver,
+    By        = browser.by,
+    until     = browser.until,
+    driver    = browser.driver;
 
 /**
  * Landing page.  Ensure title is correct.
  */
-describe('Google Test', function () {
+describe('DVLA UK Test', function () {
 
     /* 10 Seconds works well locally */
     this.timeout(10000);
@@ -43,7 +43,7 @@ describe('Google Test', function () {
      */
     before(function (done) {
        
-        driver.navigate().to('http://google.com/')
+        driver.navigate().to('https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency')
             .then(() => done())
     });
 
@@ -53,7 +53,7 @@ describe('Google Test', function () {
     it('Ensure page title is correct', function (done) {
         driver.getTitle()
             .then(() => driver.getTitle())
-            .then(title => title.should.equal('Google'))
+            .then(title => title.should.equal('Driver and Vehicle Licensing Agency - GOV.UK'))
             .then(() => done());
     });
 
