@@ -6,9 +6,9 @@
   "scripts": {
     "helloworld": "echo \"I say howdy!\"",
     "rebuild": "rm -fr node_modules; npm install",
-    "selenium": "alias gulp=./node_modules/.bin/gulp; gulp selenium; npm run selenium-with-report",
+    "selenium": "alias gulp=./node_modules/.bin/gulp; gulp selenium",
     "selenium-with-report": "./md-test-runner",
-    "test": "echo \"Error: no top-level test bootstrap specified, try running 'npm run selenium'\" && exit 1"
+    "test": "npm run selenium; npm run selenium-with-report"
   },
   "keywords": [
     "selenium",
