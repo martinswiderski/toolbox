@@ -17,9 +17,11 @@ module.exports = {
             if (typeof _proxyHttp === 'string' && typeof _proxyHttps === 'string' 
                 && _proxyHttp.length > 8 && _proxyHttps.length > 8) {
 
+                console.log ( '```' );
                 console.log('PROXY ON');
                 console.log('proxy1: '+_proxyHttp);
                 console.log('proxy2: '+_proxyHttps);
+                console.log ( '```' );
 
                 driver = new webdriver.Builder()
                     .withCapabilities({ 'browserName': _browser })
@@ -43,7 +45,11 @@ module.exports = {
             driver: driver
         };
     },
-    signTestFile: function (file) {
-        console.log( 'MD5: ' + md5(fs.readFileSync(file)) + ' File: ' + path.basename(file) );
+    signTestFile: function (file, configFile) {
+        console.log ( '```' );
+        console.log( 'MD5:    ' + md5(fs.readFileSync(file)) + ' File: ' + path.basename(file) );
+        console.log( 'Config: ' + md5(fs.readFileSync(configFile)) + ' File: ' + path.basename(configFile) );
+        console.log ( '```' );
+        console.log( '' );
     }
 };

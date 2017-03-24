@@ -34,7 +34,7 @@ var webdriver = browser.webdriver,
     until     = browser.until,
     driver    = browser.driver;
 
-config.signTestFile(__filename);
+config.signTestFile(__filename, __dirname + '/../../src/config.js');
 
 /**
  * Landing page.  Ensure title is correct.
