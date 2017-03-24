@@ -24,9 +24,9 @@ require('chai').should();
 var expect = require('chai').expect,
     config = require('./../../src/config'),
     browser = config.browser(
-        'firefox', 
-        !process.env['http_proxy'] ? '' : process.env['http_proxy'], 
-        !process.env['https_proxy'] ? '' : process.env['https_proxy']
+        'firefox',
+        'proxy.scee.net:3128',
+        'proxy.scee.net:3128'
     );
 
 var webdriver = browser.webdriver,
