@@ -16,7 +16,11 @@ module.exports = {
 
             if (typeof _proxyHttp === 'string' && typeof _proxyHttps === 'string' 
                 && _proxyHttp.length > 8 && _proxyHttps.length > 8) {
-                
+
+                console.log('PROXY ON');
+                console.log('proxy1: '+_proxyHttp);
+                console.log('proxy2: '+_proxyHttps);
+
                 driver = new webdriver.Builder()
                     .withCapabilities({ 'browserName': _browser })
                     .setProxy(proxy.manual({
@@ -24,6 +28,7 @@ module.exports = {
                         https: _proxyHttps
                     })).build();                
             } else {
+                console.log('PROXY OFF');
                 driver = new webdriver.Builder()
                     .withCapabilities({ 'browserName': _browser })
                     .build();
