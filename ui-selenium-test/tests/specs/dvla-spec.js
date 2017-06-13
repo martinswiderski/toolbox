@@ -24,9 +24,9 @@ require('chai').should();
 var expect = require('chai').expect,
     config = require('./../../src/config'),
     browser = config.browser(
-        'firefox', 
-        !process.env['http_proxy'] ? '' : process.env['http_proxy'], 
-        !process.env['https_proxy'] ? '' : process.env['https_proxy']
+        'firefox',
+        'proxy.scee.net:3128',
+        'proxy.scee.net:3128'
     );
 
 var webdriver = browser.webdriver,
@@ -34,7 +34,7 @@ var webdriver = browser.webdriver,
     until     = browser.until,
     driver    = browser.driver;
 
-config.signTestFile(__filename);
+config.signTestFile(__filename, __dirname + '/../../src/config.js');
 
 /**
  * Landing page.  Ensure title is correct.

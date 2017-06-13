@@ -29,7 +29,6 @@ gulp.task('selenium', function () {
 });
 
 gulp.task('seleniumOutput', function () {
-
   return gulp.src(['tests/specs/*-spec.js'], { read: false })
     .pipe(mocha({
       reporter: 'markdown'

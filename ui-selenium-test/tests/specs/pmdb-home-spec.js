@@ -1,7 +1,7 @@
 /**********************************************************************************************************
- * 
+ *
  *  Selenium locator functions...
- * 
+ *
  *   webdriver.by.className('.my-class')
  *   webdriver.by.css('#some-id')
  *   webdriver.by.id('element-id')
@@ -11,10 +11,10 @@
  *   webdriver.by.partialLinkText('click')
  *   webdriver.by.tagName('a')
  *   webdriver.by.xpath()
- * 
+ *
  *  Mocha note:
  *    To run a single test... ./node_modules/.bin/mocha -g Search test/YOURTEST.js
- * 
+ *
  *    -g Pattern matches the 'describe'
  *
  */
@@ -39,7 +39,7 @@ config.signTestFile(__filename, __dirname + '/../../src/config.js');
 /**
  * Landing page.  Ensure title is correct.
  */
-describe('Google Test', function () {
+describe('PMDB Test', function () {
 
     /* 10 Seconds works well locally */
     this.timeout(browser.timeout);
@@ -48,19 +48,19 @@ describe('Google Test', function () {
      * Before hook to start webdriver
      */
     before(function (done) {
-       
-        driver.navigate().to('http://google.com/')
+
+        driver.navigate().to('http://pmdb-test.internal.scee.net:8056/')
             .then(() => done())
     });
 
     /**
      * Page title correct?
      */
-    it('Ensure page Google title is correct', function (done) {
+    it('Ensure PMDB page title is correct', function (done) {
         driver.getTitle()
             .then(() => driver.getTitle())
-            .then(title => title.should.equal('Google'))
-            .then(() => done());
+        .then(title => title.should.equal('Partner Management Database'))
+        .then(() => done());
     });
 
 
