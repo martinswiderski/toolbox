@@ -1,0 +1,47 @@
+
+
+<booking>
+  <accountsDetails>
+    <hotel_id type="number">5</hotel_id>
+    <site_no type="string">GB0700</site_no>
+    <address type="string">A1 Great North Road,  Hinxworth,  Nr. Baldock, Hertfordshire</address>
+    <agent_prepay_flag type="number">1</agent_prepay_flag>
+    <airpark type="number">0</airpark>
+    <area type="string">Baldock</area>
+    <catalogue_no type="number">11</catalogue_no>
+    <country type="string">GB</country>
+    <currency type="string">sterling</currency>
+    <date_from type="number">0</date_from>
+    <date_from_status type="string"></date_from_status>
+    <fax type="string">01462 835199</fax>
+    <from_price type="number">0</from_price>
+    <grid_east type="number">522600</grid_east>
+    <grid_north type="number">238200</grid_north>
+    <img_prefix type="string">baldock_s0700</img_prefix>
+    <job_email_to type="string">baldockhinxworth@travelodge.co.uk</job_email_to>
+    <latitude type="number">52.029789</latitude>
+    <longitude type="number">-0.213952</longitude>
+    <map_ref type="number">0</map_ref>
+    <max_rack_rate type="number">49</max_rack_rate>
+    <name type="string">Baldock Hinxworth</name>
+    <owsDate type="number">0</owsDate>
+    <owsStatus type="string">OWS</owsStatus>
+    <parking_type_id type="number">2</parking_type_id>
+    <postcode type="string">SG7 5EX</postcode>
+    <profit_centre type="number">7657320</profit_centre>
+    <prop_code type="string">GB0700</prop_code>
+    <region_id type="string">1</region_id>
+    <room_picture type="string">old</room_picture>
+    <room_total type="number">40</room_total>
+    <srch_postcode type="object">null</srch_postcode>
+    <status type="string">XX</status>
+    <sub_name type="string"></sub_name>
+    <telephone type="string">0871 984 6005</telephone>
+    <town_city type="string">Baldock</town_city>
+    <tripadvisor_id type="object">null</tripadvisor_id>
+    <use_prefix type="string">false</use_prefix>
+    <vat_number type="string"></vat_number>
+    <vat_prefix type="string"></vat_prefix>
+  </accountsDetails>
+</booking>
+
