@@ -23,6 +23,6 @@ var fs = require('fs'),
     xmlString = fs.readFileSync('./myrecord.xml').toString(),
     xmlDbRecord = new dom().parseFromString(xmlString);
 
-console.log(xpath.select("//booking//accountsDetails/site_no", xmlDbRecord)[0]);
+console.log(xpath.select("//booking//accountsDetails/site_no/text()", xmlDbRecord)[0].nodeValue);
 console.log(''+JSONPath({path: '$..booking.details.hotel.site_no', json: apiResponse }));
 
